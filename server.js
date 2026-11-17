@@ -82,12 +82,6 @@ miAplicacion.get('*path', (req, res) => res.sendFile(path.join(__dirname, 'publi
 
 
 
-
-
-
-
-
-
 // Manejador Global de errores
 
 miAplicacion.use((error, peticion, respuesta, siguiente) => {
