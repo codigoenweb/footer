@@ -24,6 +24,11 @@ for (const palabraClave of ['PUERTO', 'ADMIN_EMAIL', 'MONGODB_URI']){
         process.exit(1);
     }
 }
+
+if (process.env.JWT_SECRET.length < 32) {
+  console.error('JWT_SECRET debe tener al menos 32 caracteres.');
+  process.exit(1);
+}
 /**La línea miAplicacion.set('trust proxy', 1); sirve para indicarle a una aplicación en Express.js (Node.js) que está funcionando detrás de un proxy inverso (como Nginx, Cloudflare, Heroku, Render o AWS) y que debe confiar en los encabezados HTTP que este le envía.
 El número 1 significa que la aplicación debe confiar únicamente en el primer salto (el proxy más cercano) en la red.
 
@@ -56,9 +61,7 @@ miAplicacion.use(express.urlencoded({ extended: false, limit: '20kb' }));
 
 • URLs limpias. Esta opción le dice a Express que si alguien pide una ruta sin extensión (por ejemplo, ://tusitio.com/admin), busque automáticamente si existe un archivo llamado admin.html dentro de public.*/
 
-// Servir archivos estáticos y Simple Page Application SPA frontend
-miAplicacion.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
-/*Es necesario usar path.join(__dirname, 'public') en lugar de escribir simplemente 'public' para evitar que tu aplicación se rompa dependiendo de dónde la ejecutes o en qué sistema operativo corra. */
+
 
 
 // Montar rutas de la API
@@ -69,6 +72,10 @@ miAplicacion.use('/api', contactoRutas);
 //Hay que ponerlas al final
 
 // las rutas del Frontend
+
+// Servir archivos estáticos y Simple Page Application SPA frontend
+miAplicacion.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+/*Es necesario usar path.join(__dirname, 'public') en lugar de escribir simplemente 'public' para evitar que tu aplicación se rompa dependiendo de dónde la ejecutes o en qué sistema operativo corra. */
 miAplicacion.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'public', 'admin.html')));
 miAplicacion.get('*path', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 

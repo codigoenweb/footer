@@ -21,9 +21,10 @@ copio lo que me dice el sistema en mi computadora
 
 git init
 git add .
-git commit -m "crud real"
-git status
-git push
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/codigoenweb/footer.git
+git push -u origin main
 
 10- Creo una cuenta en render con mi email o con github, así estan conectados
 11- En web services hago el deploy
