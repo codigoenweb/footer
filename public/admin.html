@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleAdmin.css">
+    <title>Admin para ver los mensajes recibidos</title>
+</head>
+<body>
+
+    <main>
+
+        <!-- ****************************************** -->
+        <!-- *************   Login ******************* -->
+         <!-- ***************************************** -->
+
+      <section id="login"  class="tarjeta"      style="max-width: 430px; margin: 8vh auto"    >
+        <h1>Acceso del propietario</h1>
+        <p class="atenuado">
+          Ingresá con las credenciales privadas del administrador.
+        </p>
+        <form id="formulario-contacto">
+          <label >
+            <span>Correo administrador</span>
+            <input  name="email"     type="email"  autocomplete="username"  required />
+            </label>
+            <label>
+                <span>Contraseña</span>
+                <input name="password"  type="password"  autocomplete="current-password" required />
+            </label>
+            <button type="submit">Ingresar</button>
+            <p id="login-msg" aria-live="polite"></p>
+        </form>
+      </section>
+
+
+       <!-- ****************************************** -->
+        <!-- *************   Login ******************* -->
+         <!-- ***************************************** -->
+
+      <section id="dashboard" class="oculto">
+        <div class="barra">
+          <div>
+            <h1>Mensajes y suscriptores</h1>
+            <p class="atenuado">Bandeja privada conectada a MongoDB Atlas</p>
+          </div>
+          <button id="logout" class="secundario">Cerrar sesión</button>
+        </div>
+        <div class="tarjeta barra">
+          <div>
+            <strong id="total">0 registros</strong>
+            <span class="atenuado" id="noleidos"></span>
+          </div>
+          <div class="fila tabs">
+            <button data-tipo="todos" class="activo">Todos</button>
+            <button data-tipo="mensaje" class="secundario">Mensajes</button>
+            <button data-tipo="suscripcion" class="secundario">
+              Suscripciones
+            </button>
+          </div>
+        </div>
+        <div id="registros"></div>
+        <div class="fila">
+          <button id="prev" class="secundario">Anterior</button>
+          <span id="pagina" class="atenuado">Página 1</span>
+          <button id="next" class="secundario">Siguiente</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/scriptAdmin.js"></script>
+</body>
+</html>
