@@ -67,7 +67,7 @@ export async function leerContactos(req, res, next) {
     const tipo = ['suscripcion', 'mensaje'].includes(req.query.tipo) ? req.query.tipo : null;
     const filter = tipo ? { tipo } : {};
     const pagina = Math.max(1, Number.parseInt(req.query.pagina, 10) || 1);
-    const limit = 25;
+    const limit = 3;
 
     const [items, total, noleidos] = await Promise.all([
      Contacto.find(filter).sort({ createdAt: -1 }).skip((pagina - 1) * limit).limit(limit).lean(),
