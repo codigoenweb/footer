@@ -28,3 +28,15 @@ git push -u origin main
 
 10- Creo una cuenta en render con mi email o con github, así estan conectados
 11- En web services hago el deploy
+
+
+[ 🌐 NAVEGADOR (Front) ]
+          │
+          │  1. Petición vía URL (ej: /admin)
+          ▼
+[ ⚙️ SERVER.JS (Back) ] ──► Lee la ruta en cascada:
+          │
+          ├──► ¿Existe en /public? ──► Envía el archivo (ej: index.html)
+          ├──► ¿Es /admin?         ──► Envía admin.html
+          ├──► ¿Cualquier otra?    ──► Envía index.html (Plan B)
+          └──► ¿Hubo un fallo?     ──► Envía Error 500 (Red de seguridad)

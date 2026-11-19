@@ -107,7 +107,7 @@ header .contenedor .logo{
 }
 header .contenedor nav{
     display: flex;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-terciario);
     padding: 0.25rem;
     border-radius: 9999px;
     gap: 0.25rem;
@@ -130,7 +130,7 @@ header .contenedor nav button.activo, header .contenedor nav button:hover {
 }
 
 header .contenedor button#tema{
-    background: var(--bg-tertiary);
+    background: var(--bg-terciario);
     border: 1px solid var(--borde-color);
     color: var(--texto-principal);
     padding: 0.5rem;
@@ -202,7 +202,7 @@ section {
 }
 
 .footer-etiqueta {
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-terciario);
     padding: 0.75rem 1.5rem;
     border-bottom: 1px solid var(--borde-color);
     display: flex;
@@ -257,7 +257,7 @@ footer a:hover {
     color: var(--texto-principal);
     font-size: 0.875rem;
     outline: none;
-    transition: borde-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .form-input:focus {
     border-color: var(--destacado-primario);
@@ -295,7 +295,7 @@ footer a:hover {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.5rem;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-terciario);
     color: var(--texto-principal);
     display: flex;
     align-items: center;
@@ -531,7 +531,7 @@ footer a:hover {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-terciario);
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     font-size: 0.85rem;
@@ -617,7 +617,7 @@ footer a:hover {
     width: 54px;
     height: 54px;
     border-radius: 0.5rem;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-terciario);
     object-fit: cover;
     flex-shrink: 0;
 }
