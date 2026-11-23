@@ -40,3 +40,5 @@ git push -u origin main
           ├──► ¿Es /admin?         ──► Envía admin.html
           ├──► ¿Cualquier otra?    ──► Envía index.html (Plan B)
           └──► ¿Hubo un fallo?     ──► Envía Error 500 (Red de seguridad)
+
+El back setea la cookie con las opciones de seguridad y la manda en la respuesta.El navegador la recibe y almacena automaticamente.

@@ -12,12 +12,12 @@ import autenticacionRutas from './src/rutas/autenticacion.rutas.js';
 const miAplicacion = express();
 // Para saber donde estamos ubicados siempre, independientemente del sistema operativo o directorio
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PUERTO = Number(process.env.PUERTO || 3000);
+const PUERTO = Number(process.env.PORT || 3000);
 
 
 // Para el caso de que no se configuren las variables de entorno que se necesitan para funcionar
 
-for (const palabraClave of ['PUERTO', 'ADMIN_EMAIL', 'MONGODB_URI']){
+for (const palabraClave of ['PORT', 'ADMIN_EMAIL', 'MONGODB_URI']){
     if(!process.env[palabraClave]){
         console.log(`Falta configurar ${palabraClave} en el archivo .env`);
         //sale
