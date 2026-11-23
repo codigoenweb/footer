@@ -23,7 +23,7 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/codigoenweb/footer.git
+git remote add origin https://github.com/usuario/repositorio.git
 git push -u origin main
 
 10- Creo una cuenta en render con mi email o con github, así estan conectados
@@ -42,3 +42,12 @@ git push -u origin main
           └──► ¿Hubo un fallo?     ──► Envía Error 500 (Red de seguridad)
 
 El back setea la cookie con las opciones de seguridad y la manda en la respuesta.El navegador la recibe y almacena automaticamente.
+
+Para generar las claves en la consola:
+node -e "import('bcryptjs').then(async b=>console.log(await b.hash('TU_CONTRASEÑA_SEGURA',12)))"
+
+Generá también un secreto JWT aleatorio. Por ejemplo, con Node:
+```bash
+node -e "console.log(require('node:crypto').randomBytes(48).toString('hex'))"
+```
+Pegá el resultado en `JWT_SECRET`.

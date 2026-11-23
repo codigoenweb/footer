@@ -98,4 +98,4 @@ miAplicacion.use((error, peticion, respuesta, siguiente) => {
 
 
 await conectarBD();
-miAplicacion.listen(3000, () => console.log(`Servidor funcionando en http://localhost:${PUERTO}`) );
+miAplicacion.listen(PUERTO, () => console.log(`Servidor funcionando en http://localhost:${PUERTO}`) );
